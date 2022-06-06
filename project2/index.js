@@ -24,6 +24,9 @@ function Comparador_Numeros(a = 0, b = 0) {
   }
 }
 
+
+
+
 const elm_str1 = document.querySelector("#comparador_strings .form #string1");
 const elm_str2 = document.querySelector("#comparador_strings .form #string2");
 const but_comparador_str = document.querySelector("#comparador_strings button");
@@ -49,6 +52,8 @@ function Comparador_Strings(a, b) {
     return `"${a}", com ${a.length} caracteres,\né Maior que \n"${b}", com ${b.length} caracteres`;
   }
 }
+
+
 
 
 
@@ -87,7 +92,6 @@ but_day_death.onclick = (e) => {
         elm_gen.value
     )
 };
-
 function Day_Death(dia,mes,ano,gen){
     let dmes,ddia,dano;
     let addmes=0;
