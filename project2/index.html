@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Javascript</title>
+</head>
+<body>
+    <section id="comparador_numeros">
+        <h1>Comparador de Números</h1>
+        <div class="form">
+            <p>
+                1º Número
+                <input type="number" name="num1" id="num1" value="0"/>
+            </p>
+            <p>
+                2º Número
+                <input type="number" name="num2" id="num2" value="0"/>
+            </p>
+        </div>
+        <button>Comparar</button>
+        <div class="result"></div>
+    </section>
+
+
+    <section id="comparador_strings">
+        <h1>Comparador de Strings</h1>
+        <div class="form">
+            <p>
+                1ª String
+                <input type="text" name="string1" id="string1" value=""/>
+            </p>
+            <p>
+                2ª String
+                <input type="text" name="string2" id="string2" value=""/>
+            </p>
+        </div>
+        <button>Comparar</button>
+        <div class="result"></div>
+    </section>
+
+
+    <section id="day_death">
+        <div class="form">
+            <p>
+                Dia de seu Nascimento
+                <input type="number" name="dia" id="dia"/>
+            </p>
+            <p>
+                Mês de seu Nascimento
+                <select name="mes" id="mes"></select>
+            </p>
+            <p>
+                Ano de seu Nascimento
+                <input type="number" name="ano" id="ano"/>
+            </p>
+            <p>
+                Gênero
+                <select name="gen" id="gen">
+                    <option value="Homem">Homem</option>
+                    <option value="Mulher">Mulher</option>
+                </select>
+            </p>
+        </div>
+        <button>Calcular</button>
+        <div class="result"></div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
