@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Javascript</title>
+</head>
+<body>
+    <section id="imc">
+        <h1>Índice de Massa Corporal</h1>
+        <div class="form">
+            <p>
+                Peso(kg)
+                <input type="text" name="peso" id="peso"/>
+            </p>
+            <p>
+                Altura(m)
+                <input type="text" name="altura" id="altura"/>
+            </p>
+        </div>
+        <button>Calcular</button>
+        <div class="result"></div>
+    </section>
+
+
+    <section id="sorteio_numero">
+        <h1>Sorteio de Numeros</h1>
+        <div class="form">
+            <p>
+                Numero minimo
+                <input type="number" name="min" id="min" value="0"/>
+            </p>
+            <p>
+                Numero Maximo
+                <input type="number" name="max" id="max" value="0"/>
+            </p>
+        </div>
+        <button>Sortear</button>
+        <div class="result"></div>
+    </section>
+
+
+    <section id="arredondar_numero">
+        <h1>Arredondador de Numeros</h1>
+        <div class="form">
+            <p>
+                Insira o Numero
+                <input type="number" name="num" id="num"/>
+            </p>
+        </div>
+        <button>Arredondar</button>
+        <div class="result"></div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
