@@ -51,3 +51,30 @@ function ArredondarNumero() {
   res_sort_num.innerHTML = `${ar_cima}||${ar_baixo}`
 }
 document.querySelector('#arredondar_numero button').addEventListener('click', ArredondarNumero)
+
+
+
+function IBGE() {
+  var res_ibge = document.querySelector('#ibge .result');
+  let idade_random = 0;
+  let genero_random = (Math.ceil(Math.random()*1000))
+
+  if (genero_random>517) {
+    idade_random = (Math.ceil(Math.random()*517));
+    if (idade_random>86) {
+      res_ibge.innerHTML = `Mulher e Idosa`
+    }else{
+      res_ibge.innerHTML = `Mulher e Não-Idosa`
+    }
+  }else{
+    idade_random = (Math.ceil(Math.random()*483));
+    if (idade_random>81 ) {
+      res_ibge.innerHTML = `Homem e Idoso`
+    }else{
+      res_ibge.innerHTML = `Homem e Não-Idoso`
+    }
+  }
+
+  console.log(`${num_random}`)
+}
+document.querySelector('#ibge button').addEventListener('click', IBGE)

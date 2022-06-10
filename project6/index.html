@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="bomba">
+        <img src="img/bomba_ativa.png" alt="">
+        <p id="time"></p>
+        <audio id="explosao" src="audio/explosao.mp3"></audio>
+        <audio id="beep" src="audio/beep-05.wav"></audio>
+    </section>
+    <section id="temporizador">
+        <p>
+            Minutos
+            <select name="minuto" id="minuto"></select>
+        </p>
+        <p>
+            Segundos
+            <select name="segundo" id="segundo"></select>
+        </p>
+        <button>Iniciar</button>
+        <p id="tela"></p>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
