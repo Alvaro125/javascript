@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>CEP</title>
+</head>
+<body>
+    <section id="user">
+        <h1>Cadastro de Usuario</h1>
+        <p>Nome:<input type="text" name="name" id="name"/></p>
+        <p>Data de Nascimento:<input type="date" name="birthDate" id="birthDate"/></p>
+        <p>Peso:<input type="number" name="weight" id="weight" placeholder="Kg"/></p>
+        <p>Altura:<input type="number" name="height" id="height" placeholder="cm"/></p>
+        <p>Genero: <select name="gender" id="gender">
+            <option value="Mulher">Mulher</option>
+            <option value="Homem">Homem</option>
+        </select></p>
+        <button>Cadastrar</button>
+        <div class="result">
+        </div>
+    </section>
+    <section id="parse">
+        <h1>JSON</h1>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <button>Converter</button>
+        <div class="result"></div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
