@@ -107,6 +107,7 @@ button_parse.addEventListener('click', ParseJSON)
 
 const obj = new Object();
 obj['numero qualquer']=1;
+Object.defineProperty(obj, "um atributo", {value:2})
 console.log(obj['numero qualquer']);
-console.log(obj.valueOf('numero qualquer').toString());
+console.log(Object.defineProperty(obj, 'um atributo'));
 console.dir(obj);
