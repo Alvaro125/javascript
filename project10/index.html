@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Armazem</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="viewInclude"><ion-icon name="add-outline"></ion-icon></button>
+            <button id="viewList"><ion-icon name="list-outline"></ion-icon></button>
+            <button id="viewEdit"><ion-icon name="create-outline"></ion-icon></button>
+        </nav>
+    </header>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <p></p>
+    </div>
+    <div class="confirm">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <p></p>
+    </div>
+    <section id="include" class="show">
+        <h1>Inserir</h1>
+        <div class="form">
+            <label for="nome">Nome do produto:</label>
+            <input type="text" name="nome" id="nome"/>
+            <label for="descricao">Decrição do produto:</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+            <label for="valor">Valor do produto:</label>
+            <input type="number" name="valor" id="valor"/>
+            <button id="include" class="include" onclick="Incluir()">Incluir produto</button>
+        </div>
+    </section>
+    <section id="edit">
+        <h1>Editar</h1>
+        <div class="form">
+            <label for="nome">Nome do produto:</label>
+            <input type="text" name="nome" id="nome"/>
+            <label for="descricao">Decrição do produto:</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+            <label for="valor">Valor do produto:</label>
+            <input type="number" name="valor" id="valor"/>
+            <button>Incluir produto</button>
+        </div>
+    </section>
+    <section id="list">
+        <div class="view">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                    <th>Editar</th>
+                    <th>Apagar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <script src="main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
