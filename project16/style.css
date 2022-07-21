@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(102, 49, 250);
+}
+select, input, button{
+    font-family: 'Poppins', sans-serif;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+}
+button{
+    font-family: 'Poppins', sans-serif;
+    padding: .5rem 1.5rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: .75rem;
+    font-weight: 700;
+}
+#googlemaps.show, #vermapa.show{
+    display: block;
+}
+#googlemaps, #vermapa{
+    display: none;
+}

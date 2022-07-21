@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <div id="app">
+        <label for="coins">Selecione sua Moeda</label>
+        <select name="coins" id="coins"></select>
+        <label for="start">Data de Inicio</label>
+        <input type="date" name="start" id="start"/>
+        <label for="end">Data de Finalização</label>
+        <input type="date" name="end" id="end"/>
+        <button id="act_coin">Cotação</button>
+        <div id="result">
+            <h1></h1>
+            <table>
+                <caption>cotações</caption>
+                <thead>
+                <tr>
+                    <th>Data e Hora</th>
+                    <th>Compra</th>
+                    <th>Venda</th>
+                    <th>Variação</th>
+                    <th>Porcentagem de Variação</th>
+                    <th>Máximo</th>
+                    <th>Mínimo</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

@@ -52,11 +52,22 @@
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             <div class="text"></div>
         </div>
+        <div class="ctn_search">
+            <input type="search" name="pesquisa" id="pesquisa"/>
+            <button id="search"><ion-icon name="search-outline"></ion-icon></button>
+            
+        </div>
         <table>
             <thead>
                 <tr>
-                    <th>Produto</th>
-                    <th>Valor</th>
+                    <th>Produto
+                        <ion-icon id="down_nome" name="caret-down-outline"></ion-icon>
+                        <ion-icon id="up_nome" name="caret-up-outline"></ion-icon>
+                    </th>
+                    <th>Valor
+                        <ion-icon id="down_valor" name="caret-down-outline"></ion-icon>
+                        <ion-icon id="up_valor" name="caret-up-outline"></ion-icon>
+                    </th>
                     <th>Editar</th>
                     <th>Apagar</th>
                 </tr>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="jogo">
+    <div id="X">
+      <p>X</p>
+    </div>
+    <div id="game">
+      <div class="row">
+        <button class="bbottom bright"></button>
+        <button class="bleft bright bbottom"></button>
+        <button class="bbottom bleft"></button>
+      </div>
+      <div class="row">
+        <button class="bbottom btop bright"></button>
+        <button class="bbottom bleft bright btop"></button>
+        <button class="bleft bbottom btop"></button>
+      </div>
+      <div class="row">
+        <button class="btop bright"></button>
+        <button class="btop bleft bright"></button>
+        <button class="btop bleft"></button>
+      </div>
+    </div>
+    <div id="O">
+      <p>O</p>
+    </div>
+  </section>
+  <button id="reset">Reiniciar</button>
+  <script src="game.js"></script>
+</body>
+</html>
