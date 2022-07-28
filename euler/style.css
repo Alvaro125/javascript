@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    position: relative;
+    width: auto;
+}
+section.paragraph{
+    padding: 0 0 0 1rem;
+}
+.paragraph p{
+    width: 90%;
+    word-wrap: break-word;
+}
+.card-table {
+    background-image: url(imgs/pocker.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 220% 220%;
+    background-position-x: 49%;
+    background-position-y: 60%;
+    width: 94%;
+    margin: 0 auto;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+.card {
+    width: calc(25 * 0.25rem);
+    height: calc(23 * 0.25rem);
+    border-radius: 5px;
+    background: #fff;
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem 0;
+    border: 1px solid #ddd;
+    transform: translateY(-155%);
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.25, 0, 0.28, 1.43);
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+.card:nth-child(1) {
+    transition-delay: 0;
+}
+.card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+.card:nth-child(3) {
+    transition-delay: 0.45s;
+}
+.card:nth-child(4) {
+    transition-delay: 0.15s;
+}
+.load-cards {
+    width: 100%;
+    float: left;
+    padding: 1rem;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.load-cards:hover {
+    background: #ddd;
+}
+.animated .card {
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.25, -1.42, 0.28, 1.43);
+}
+.animated .card:nth-child(1) {
+    transition-delay: 0;
+}
+.animated .card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+.animated .card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.animated .card:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+#cartas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#cartas button{
+    padding: 4px 20px;
+    border: 2px solid #008ddf;
+    background: transparent;
+    color: #008ddf;
+}
+#cartas button:hover{
+    padding: 4px 20px;
+    border: 2px solid #008ddf;
+    background: #008ddf;
+    color: #ddd;
+}
