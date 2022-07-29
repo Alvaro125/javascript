@@ -152,44 +152,25 @@ class Coin extends Avatar {
 }
 
 class Cowboy extends Avatar {
-    #angle;
     constructor(width, height, color, x, y, area, type) {
         super(width, height, color, x, y, area, type);
         this.tirox = this.x;
         this.tiroy = this.y;
         this.range = 200;
         this.nBalas = 11;
-        this.#angle = 0;
         this.dano = 2;
         this.custoPower = 1;
     }
-    tiro(_array) {
-        if (!_array) {
-            this.tirox = super.x;
-            this.tiroy = super.y;
-        } else {
-            if (this.nBalas) {
-                let ctx = this.ctx.context;
-                ctx.fillStyle = 'black';
-                ctx.fillRect(this.tirox, this.tiroy, 5, 5);
-                this.tirox += Math.cos(this.angle) * 3;
-                this.tiroy += Math.sin(this.angle) * 3;
-                this.range -= 3;
-                if (this.range <= 0) {
-                    this.tirox = this.x;
-                    this.tiroy = this.y;
-                    _array.splice(this, 1);
-                    this.nBalas -= 1;
-                    this.range = 200;
-                }
-            }
-        }
-    }
-    get angle() {
-        return this.#angle;
-    }
-    set angle(_value) {
-        this.#angle = _value;
+}
+class Wizard extends Avatar {
+    constructor(width, height, color, x, y, area, type) {
+        super(width, height, color, x, y, area, type);
+        this.tirox = this.x;
+        this.tiroy = this.y;
+        this.range = 200;
+        this.nBalas = 11;
+        this.dano = 3;
+        this.custoPower = 4;
     }
 }
 
@@ -226,7 +207,20 @@ class Attack extends Avatar {
             ctx.fillRect(this.x, this.y, this.size, this.size);
         }
     }
-    fogo
+    fogo(){
+        if (this.obj.nBalas) {
+            if (this.range <= 0) {
+                this.array.splice(this);
+                this.obj.nBalas -= 1;
+            }
+            this.range = 300;
+            this.size = 10;
+            let ctx = this.area.context;
+            this.move(this.array);
+            ctx.fillStyle = 'red';
+            ctx.fillRect(this.x, this.y, this.size, this.size);
+        }
+    }
     move() {
         if (this.obj.nBalas) {
             this.x += this.dirX * this.spd;
@@ -280,4 +274,4 @@ class Boss extends Avatar {
         }
     }
 }
-export { Avatar, Coin, Cowboy, Attack, Boss };
+export { Avatar, Coin, Cowboy, Attack, Boss, Wizard };

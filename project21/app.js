@@ -1,11 +1,12 @@
 import { GerarCor, GerarNum } from './helpers.js';
-import { Coin, Avatar, Cowboy, Attack, Boss } from './components.js';
+import { Coin, Avatar, Cowboy, Attack, Boss, Wizard } from './components.js';
 let player, boss;
 let coins = [];
 let tiros = [];
 let isize = 40;
-let spdx = GerarNum(4)
-let spdy = GerarNum(4)
+let nivel = 0;
+let spdx = GerarNum(4+nivel,nivel)
+let spdy = GerarNum(4+nivel, nivel)
 let speedNormal = 10;
 let gameover = false;
 function createCoins() {
@@ -31,16 +32,16 @@ function createCoins() {
 function updateTiros() {
     for (let i = 0; i < tiros.length; i++) {
         if (tiros[i].hitTest(boss)) {
-            boss.hp-=2;
-            player.nBalas -=1;
+            boss.hp-=player.dano;
+            tiros.splice(i,1)
         }
-        tiros[i].tiro();
+        tiros[i].fogo();
     }
 }
 
 function startGame() {
     screen.start();
-    player = new Cowboy(
+    player = new Wizard(
         isize,
         isize,
         './sprites/down.png',
@@ -88,13 +89,13 @@ var screen = {
 function Update() {
     if (!gameover) {
         screen.clear();
-        tiros.forEach((el,key)=>{
-            if (el.hitTest(boss)) {
-                tiros.splice(key,1)
-                boss.hp-=player.dano;
-                player.nBalas -=1;
-            }
-        })
+        // tiros.forEach((el,key)=>{
+        //     if (el.hitTest(boss)) {
+        //         tiros.splice(key,1)
+        //         boss.hp-=player.dano;
+        //         player.nBalas -=1;
+        //     }
+        // })
         for (let i = 0; i < tiros.length; i++) {
         }
         if (coins.length) {
@@ -157,8 +158,9 @@ function Update() {
             boss.hpbar();
         }else{
             boss = new Boss(isize, isize, GerarCor(), 100, 100, screen);
-            spdx = GerarNum(4)
-            spdy = GerarNum(4)
+            nivel+=1;
+            spdx = GerarNum(4+nivel,nivel)
+            spdy = GerarNum(4+nivel, nivel)
         }
         updateTiros();
     }else{
