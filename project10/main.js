@@ -36,6 +36,8 @@ function Incluir(nome, descricao, valor) {
     if (typeof descricao !== "string" || descricao == "") {
       throw new Error("Descrição invalida");
     }
+    // validação está legal. Único ponto cego que percebi são valores negativos
+    // (a validação não os proíbe)
     if (typeof valor !== "number" || isNaN(valor)) {
       throw new Error("Valor invalida");
     }
@@ -66,6 +68,7 @@ function Listar() {
   let i = 0;
   lista.innerHTML = "";
   while (i < produtos.length) {
+    // legal a ideia do toLocaleString ! Eu não conhecia
     lista.innerHTML += `
         <tr>
             <td onclick="View(${produtos[i].id})">${produtos[i].nome}</td>
@@ -78,6 +81,12 @@ function Listar() {
   }
 }
 function Deletar(id) {
+  // esta variável poderia ter um nome mais semântico.
+  // Ela começa como false e troca pra true no momento em que
+  // vc encontra o elemento com o id buscado. Então a variável
+  // poderia chamar "found" (de "encontrado").
+  // O mesmo comentário se aplica a outras funções que têm uma 
+  // variável "isTrue"
   let isTrue = false;
   let i = 0;
   while (!isTrue) {
@@ -120,7 +129,7 @@ function Editar(nome, descricao, valor, id) {
     document.querySelector(
       ".confirm p"
     ).innerHTML = `Produto de id:${index} incluído
-    com sucesso!`;
+    com sucesso!`; // não faz mais sentido "Produto de id:<x> EDITADO com sucesso" ??
     Listar();
     ViewList()
     document.querySelector("#viewInclude").classList.remove("show")
@@ -142,6 +151,11 @@ function ViewEditar(id) {
       edit_nome.value = produtos[i].nome;
       edit_descricao.value = produtos[i].descricao;
       edit_valor.value = produtos[i].valor;
+      // bug !!! Deveria ser "ed_id = id;"
+      // Esse bug pode quebrar a aplicação: pense que há 2 produtos
+      // e você deleta o primeiro. Daqui pra frente, nenhum produto
+      // (existente ou futuramente criado) poderá mais ser editado
+      // corretamente
       ed_id = i;
       isTrue = true;
     } else {
@@ -159,6 +173,8 @@ function View(id) {
   let i = 0;
   while (!isTrue) {
     if (produtos[i].id == id) {
+      // este "d" é criado como variável global desnecessariamente, ele poderia ser uma variável local:
+      // const d = new Date(...);
       d = new Date(produtos[i].incluidoEm);
       var date_format_str =
       (d.getDate().toString().length == 2
@@ -175,7 +191,10 @@ function View(id) {
           ? d.getHours().toString()
           : "0" + d.getHours().toString()) +
         ":" +
-        ((parseInt(d.getMinutes() / 5) * 5).toString().length == 2
+        ((parseInt(d.getMinutes() / 5) * 5).toString().length == 2 // por que /5 e *5 ? 
+                                                                   // isso arredonda para múltiplos de 5 minutos,
+                                                                   // mas não vejo por que fazer isso em vez de mostrar
+                                                                   // o real minuto
           ? (parseInt(d.getMinutes() / 5) * 5).toString()
           : "0" + (parseInt(d.getMinutes() / 5) * 5).toString()) +
         ":00";
@@ -188,7 +207,7 @@ function View(id) {
         <p><strong>Data:</strong>${date_format_str}</p>
         `;
       isTrue = true;
-    } else {
+    } else { // não precisava do else aqui. Poderia fazer igual ao que fez na função Deletar (i++ fora do else)
       i++;
     }
   }
@@ -207,7 +226,7 @@ include_button.onclick = function () {
   Incluir(
     include_nome.value,
     include_descricao.value,
-    include_valor.valueAsNumber
+    include_valor.valueAsNumber  // legal ! não sabia que isto existia (valueAsNumber)
   );
 };
 function ViewInclude() {
